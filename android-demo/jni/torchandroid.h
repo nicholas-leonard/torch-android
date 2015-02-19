@@ -14,12 +14,7 @@
 #include "android_fopen.h"
 extern "C" {
 
-#if DEBUG
-#include <android/log.h>
-#  define  D(x...)  __android_log_print(ANDROID_LOG_INFO,"torchdemo", "%s", x)
-#else
-#  define  D(...)  do {} while (0)
-#endif
+#define  D(...)  do {} while (0)
 
 #define luaL_dobuffer(L, b, n, s)					\
   (luaL_loadbuffer(L, b, n, s) || lua_pcall(L, 0, LUA_MULTRET, 0))

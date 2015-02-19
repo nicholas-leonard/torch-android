@@ -44,7 +44,7 @@ cd ../../
 echo "Copying libraries"
 rm -rf lib
 mkdir -p lib
-cp src/libs/armeabi-v7a/*.a lib/
+find -name '*.a' -exec cp -vuni '{}' "./lib/" ";"
 echo "done"
 
 # export lua sources
